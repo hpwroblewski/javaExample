@@ -61,5 +61,6 @@ public class Variables {
 
     char charVariable = 100;
     System.out.println("charVariable = " + charVariable);
+
     }
 }
