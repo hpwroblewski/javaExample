@@ -32,7 +32,7 @@ public class ArrayVariable {
         //ERROR - Nie ma takiego indeksu - Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException
         //System.out.println("intArray indeks 2 = " + intArray[2]);
 
-        //array.lenght - sprawdzenie długości tablicy
+        //array.length - sprawdzenie długości tablicy
         int intArrayLength = intArray.length;
         int stringArrayLength = stringArray.length;
 
