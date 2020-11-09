@@ -1,24 +1,24 @@
-package introduction;
+package package_1_variables;
 
-public class Variables {
+public class Class_2_Variables {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
 //    byte
 //    Min: -128
 //    Max: 127
 //    Default: 0
 
-    byte byteVariable = 100;
-    System.out.println("byteVariable = " + byteVariable);
+        byte byteVariable = 100;
+        System.out.println("byteVariable = " + byteVariable);
 
 //    short
 //    Min: -32,768
 //    Max: 32,767
 //    Default: 0
 
-    short shortVariable = 1000;
-    System.out.println("shortVariable = " + shortVariable);
+        short shortVariable = 1000;
+        System.out.println("shortVariable = " + shortVariable);
 
 //    int
 //    Min: -2,147,483,648

@@ -1,6 +1,6 @@
-package introduction;
+package package_1_variables;
 
-public class StringVariable {
+public class Class_4_StringVariable {
 
     public static void main(String[] args) {
 

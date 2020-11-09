@@ -1,8 +1,8 @@
-package introduction;
+package package_1_variables;
 
 import java.util.Arrays;
 
-public class ArrayVariable {
+public class Class_5_ArrayVariable {
 
     public static void main(String[] args) {
 

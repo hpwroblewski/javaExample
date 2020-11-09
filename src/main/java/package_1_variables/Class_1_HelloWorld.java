@@ -1,6 +1,6 @@
-package introduction;
+package package_1_variables;
 
-public class HelloWorld {
+public class Class_1_HelloWorld {
 
     public static void main(String[] args) {
 

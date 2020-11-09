@@ -1,6 +1,6 @@
-package introduction;
+package package_1_variables;
 
-public class VariablesDefaultValue {
+public class Class_3_VariablesDefaultValue {
 
     static byte byteVariable;
     static short shortVariable;
