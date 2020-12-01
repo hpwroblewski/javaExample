@@ -6,13 +6,11 @@ public class Class_4_StringVariable {
 
         //ZMIENNE REFERENCYJNE - ZMIENNE TYPU OBIEKT - STRING
 
-        //ANTI PATTERN - String Object - Heap w Storage
-        // Tworzone są dwie referencje(stringReference3, stringReference4), które odwołują się do dwóch oddzielnych obiektów o tej samej nazwie Hello (znajduje się pamięci w jako String Object - Heap w Storage), co negatywnie wpływa na pamięć
+        //ANTI PATTERN - String Object - Tworzone są dwie referencje (stringReference3, stringReference4), które odwołują się do dwóch oddzielnych obiektów o tej samej nazwie Hello, co negatywnie wpływa na pamięć
         String stringReference3 = new String("Hello");
         String stringReference4 = new String("Hello");
 
-        //BEST PRACTISE - String literal - String Constant Poll w Storage
-        // Tworzone są dwie referencje (stringReference1, stringReference2), które odwołują się do jednego obiekt o tej samej nazwie Hello (znajduje się w pamięci jako String literal - String Constant Poll w Storage), co pozytywnie wpływa na pamięć
+        //BEST PRACTISE - Tworzone są dwie referencje (stringReference1, stringReference2), które odwołują się do jednego obiektu o tej samej nazwie Hello, co pozytywnie wpływa na pamięć
         String stringReference1 = "Hello";
         String stringReference2 = "Hello";
 
@@ -50,7 +48,7 @@ public class Class_4_StringVariable {
         //.indexOf(String) - jeśli nie znajdzie znaku zwraca -1
         System.out.println("stringReferenceText.indexOf(String) = " + stringReferenceText.indexOf("ą"));
 
-        //.isEmpty() - sprawdza czy tekst jest pusty
+        //.isEmpty() - sprawdza czy nie ma tekstu
         System.out.println("stringReferenceTextComapare4.isEmpty() = " + stringReferenceTextComapare4.isEmpty());
         //.isEmpty() - jeśli w środku String'a będzie sama spacja, oznacza to że String nie jest pusty
         System.out.println("stringReferenceTextComapare5.isEmpty() = " + stringReferenceTextComapare5.isEmpty());
@@ -75,7 +73,7 @@ public class Class_4_StringVariable {
         //.toUpperCase() - zwraca tekst pisany z dużych liter
         System.out.println("stringReferenceText.toUpperCase() = " + stringReferenceText.toUpperCase());
 
-        //Pętla zwraca każdy znak z tablicy wraz z jego indeksem
+        //Pętla zwracająca każdy znak z tablicy wraz z jego indeksem
         char[] charArray = stringReferenceText.toCharArray();
         for (int i = 0; i < stringReferenceText.length(); i++) {
             System.out.println("Numer indeksu:" + i + " odpowiada: " + charArray[i]);

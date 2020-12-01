@@ -5,62 +5,61 @@ public class Class_2_Variables {
     public static void main(String[] args) {
 
 //    byte
-//    Min: -128
-//    Max: 127
-//    Default: 0
+//    MIN: -128
+//    MAX: 127
+//    DEFAULT: 0
 
         byte byteVariable = 100;
         System.out.println("byteVariable = " + byteVariable);
 
 //    short
-//    Min: -32,768
-//    Max: 32,767
-//    Default: 0
+//    MIN: -32 768
+//    MAX: 32 767
+//    DEFAULT: 0
 
         short shortVariable = 1000;
         System.out.println("shortVariable = " + shortVariable);
 
 //    int
-//    Min: -2,147,483,648
-//    Max: 2,147,483,647
-//    Default: 0
+//    MIN: -2 147 483 648
+//    MAX: 2 147 483 647
+//    DEFAULT: 0
 
-    int integerVariable = 100000;
-    System.out.println("integerVariable = " + integerVariable);
+        int integerVariable = 100000;
+        System.out.println("integerVariable = " + integerVariable);
 
 //    long
-//    Min: -2^63
-//    Max: 2^63 - 1
-//    Default: 0
+//    MIN: -2^63
+//    MAX: 2^63 - 1
+//    DEFAULT: 0
 
-    long longVariable = 100000000L;
-    System.out.println("longVariable = " + longVariable);
+        long longVariable = 100000000L;
+        System.out.println("longVariable = " + longVariable);
 
 //    float
-//    Default: 0.0f
+//    DEFAULT: 0.0f
 
-    float floatVariable = 10.11111111111f;
-    System.out.println("floatVariable = " + floatVariable);
+        float floatVariable = 10.11111111111f;
+        System.out.println("floatVariable = " + floatVariable);
 
 //    double
-//    Default: 0.0d
+//    DEFAULT: 0.0d
 
-    double doubleVariable = 10.11111111111;
-    System.out.println("doubleVariable = " + doubleVariable);
+        double doubleVariable = 10.11111111111;
+        System.out.println("doubleVariable = " + doubleVariable);
 
-//    boolean
-//    false and true
-//    Default: false
+//    boolean false and true
+//    DEFAULT: false
 
-    boolean booleanVariable = true;
-    System.out.println("booleanVariable = " + booleanVariable);
+        boolean booleanVariable = true;
+        System.out.println("booleanVariable = " + booleanVariable);
 
 //    char
-//    Min: 0
-//    Max: 65,535
+//    MIN: 0
+//    MAX: 65 535
 
-    char charVariable = 100;
-    System.out.println("charVariable = " + charVariable);
+        char charVariable = 100;
+        System.out.println("charVariable = " + charVariable);
 
     }
 }

@@ -2,6 +2,7 @@ package package_1_variables;
 
 public class Class_3_VariablesDefaultValue {
 
+    //DEKLARACJA
     static byte byteVariable;
     static short shortVariable;
     static int integerVariable;
