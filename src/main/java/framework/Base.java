@@ -19,7 +19,7 @@ public class Base {
     public WebDriver initializeDriver() throws IOException {
 //        5.USTAWIENIE INICJALIZACJI DRIVERÓW PRZEGLĄDAREK DO ICH URUCHOMIENIA
         Properties prop = new Properties();
-        FileInputStream fis = new FileInputStream("src/main/java/framework/data.properties");
+        FileInputStream fis = new FileInputStream("src/main/resources/data.properties");
         prop.load(fis);
 //        6.DODANIE WYBORU PRZEGLĄDARKI W KTÓREJ MAJĄ ZOSTAĆ WYKONANE TESTY W PLIKU DATA.PROPERTIES
         String browserName = prop.getProperty("browser");
