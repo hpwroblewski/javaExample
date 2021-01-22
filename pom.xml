@@ -23,13 +23,15 @@
 
     <!--1.DODANIE DEPENDENCIES-->
     <dependencies>
-        <!--2.DODANIE SELENIUM https://www.selenium.dev/maven/-->
+
+        <!--2.DODANIE BIBLIOTEKI SELENIUM https://www.selenium.dev/maven/-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
-        <!--3.DODANIE TESTNG https://testng.org/doc/maven.html-->
+
+        <!--3.DODANIE BIBLIOTEKI TESTNG https://testng.org/doc/maven.html-->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>

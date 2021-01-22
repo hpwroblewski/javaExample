@@ -1,28 +1,34 @@
-import framework.Base;
-import framework.pageObjects.HomePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import framework.config.Base;
+import framework.page.ListPage;
+import framework.page.SearchPage;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-//9.DODANIE EXTENDS BASE DZIEDZICZENIA METODY INITIALIZEDRIVER ŻEBY MOŻNA BYŁO UŻYĆ METODY I ZWRÓCIĆ DRIVERA
+//11.DODANIE EXTENDS BASE DZIEDZICZENIA METODY INITIALIZEDRIVER ŻEBY MOŻNA BYŁO UŻYĆ METODY I ZWRÓCIĆ DRIVERA
 public class OtodomTest extends Base {
 
-    //    10.DODANIE ADNOTACJI TEST Z TESTNG
+    //    12.DODANIE ADNOTACJI TEST Z TESTNG ORAZ NAZWY TESTU
     @Test
     public void basePageNavigation() throws IOException, InterruptedException {
-//    11. INICJALIZACJA DRIVERA PRZEGLĄDARKI I ODPALENIE TESTU
+
+//        13.INICJALIZACJA DRIVERA PRZEGLĄDARKI I ODPALENIE PRZEGLĄDARKI
         driver = initializeDriver();
         driver.get("https://www.otodom.pl/");
         driver.manage().window().maximize();
-//    14.PAGE OBJECT PATTERN PRZENOSI DRIVERA PRZEGLĄDARKI
-        HomePage homePage = new HomePage(driver);
-        homePage.getLogin();
 
-//        driver.findElement(By.id("downshift-0-label")).click();
-//        driver.findElement(By.id("downshift-0-label")).sendKeys("Siedlce, mazowieckie");
-//        Thread.sleep(2000);
-//        driver.findElement(By.className("css-19u3g69")).click();
+//        19.PAGE OBJECT PATTERN PRZENOSI DRIVERA PRZEGLĄDARKI
+        SearchPage searchPage = new SearchPage(driver);
+        searchPage.getLogin().click();
+        searchPage.getLogin().sendKeys("Siedlce, mazowieckie");
+        searchPage.getLoginCheckbox().click();
+        searchPage.getSearchButton().click();
+
+        ListPage listPage = new ListPage(driver);
+        String text = listPage.getAmountOfRecord().getText();
+        System.out.println(text);
+
+//        20.ZAMKNIĘCIE PRZEGLĄDARKI
+        driver.close();
     }
 }
