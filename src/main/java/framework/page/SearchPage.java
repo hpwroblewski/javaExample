@@ -21,11 +21,11 @@ public class SearchPage {
     }
 
     //    18.DODANIE METOD DLA PAGE OBJECT PATERN KTÓRE POBIERAJĄ SELEKTORY
-    public WebElement getLogin() {
+    public WebElement getSearchInput() {
         return driver.findElement(searchInputSelector);
     }
 
-    public WebElement getLoginCheckbox() {
+    public WebElement getSearchInputCheckbox() {
         return driver.findElement(searchInputCheckboxSelector);
     }
 

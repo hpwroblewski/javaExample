@@ -11,6 +11,7 @@ public class ListPage {
     public WebDriver driver;
 
     //    16.DODANIE SELEKTORÓW
+    By searchInputSelector = By.id("downshift-0-label");
     By amountOfRecordSelector = By.cssSelector("#body-container > div > div > div.row.section-listing__row > div > div.before-offers.clearfix.hidden-xs > div.offers-index.pull-left.text-nowrap > strong");
 
     //    17.DODANIE KONSTRUKTORA KTÓRY PRZENOSI DRIVERA PRZEGLĄDARKI
@@ -19,6 +20,10 @@ public class ListPage {
     }
 
     //    18.DODANIE METOD DLA PAGE OBJECT PATERN KTÓRE POBIERAJĄ SELEKTORY
+    public WebElement getSearchInput() {
+        return driver.findElement(searchInputSelector);
+    }
+
     public WebElement getAmountOfRecord() {
         return driver.findElement(amountOfRecordSelector);
     }
