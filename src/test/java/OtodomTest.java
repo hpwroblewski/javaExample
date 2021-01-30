@@ -22,12 +22,14 @@ public class OtodomTest extends Base {
 
 //        19.PAGE OBJECT PATTERN PRZENOSI DRIVERA PRZEGLĄDARKI
         SearchPage searchPage = new SearchPage(driver);
+        Assert.assertTrue(searchPage.getSearchInput().isDisplayed());
         searchPage.getSearchInput().click();
         searchPage.getSearchInput().sendKeys(destination);
         searchPage.getSearchInputCheckbox().click();
         searchPage.getSearchButton().click();
 
         ListPage listPage = new ListPage(driver);
+        Assert.assertTrue(listPage.getSearchInput().isDisplayed());
         Assert.assertEquals(listPage.getSearchInput().getText(), destination);
         String text = listPage.getAmountOfRecord().getText();
         System.out.println(text);
