@@ -1,4 +1,4 @@
-package package_2_methods;
+package package_3_class;
 
 public class Class_10_RunClass {
 

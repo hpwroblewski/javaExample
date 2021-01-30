@@ -1,4 +1,4 @@
-package package_2_methods;
+package package_3_class;
 
 public class Class_9_Class {
     //KLASA TO SZABLON KTÓRY WYKORZYSTUJE SIĘ TO TWORZENIA OBIEKTÓW
