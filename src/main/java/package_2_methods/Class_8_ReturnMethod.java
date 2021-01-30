@@ -4,8 +4,6 @@ public class Class_8_ReturnMethod {
 
     public static void main(String[] args) {
 
-
-
         String studentName;
         int score;
         int grade;
