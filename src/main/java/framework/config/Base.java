@@ -13,13 +13,15 @@ import java.util.concurrent.TimeUnit;
 //4.DODANIE KLASY BASE JAKO BAZOWEJ KONFIGURACJI
 public class Base {
 
-    //    5.DODANIE DRIVERA
-    public WebDriver driver;
+//    5.DODANIE DRIVERA
+public WebDriver driver;
+    //    24.WYNIESIENIE DEKLARACJI OBIEKTU TAK ABY MOŻNA BYŁO GO DZIEDZICZYĆ Z KLASY Base POPRZEZ DODANIE IDENTYFIKATORA DOSTĘPU public A JEŚLI COŚ NIE JEST public NIE MOŻNA Z TEGO DZIEDZICZYĆ
+    public Properties prop;
 
     public WebDriver initializeDriver() throws IOException {
 
 //        6.USTAWIENIE ODCZYTU NAZWY PRZEGLĄDARKI Z PLIKU DATA.PROPERTIES
-        Properties prop = new Properties();
+        prop = new Properties();
         FileInputStream fis = new FileInputStream("src/main/resources/data.properties");
         prop.load(fis);
 
