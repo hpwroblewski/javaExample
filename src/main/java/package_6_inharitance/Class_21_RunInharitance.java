@@ -1,6 +1,6 @@
 package package_6_inharitance;
 
-public class Class_20_RunInharitance {
+public class Class_21_RunInharitance {
 
     public static void main(String[] args) {
 
