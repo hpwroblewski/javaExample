@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 //15.DODANIE PAGE OBJECT PATERN W KTÓRYM KAŻDA STRONA MA DODANE WSZYSTKIE ELEMENTY STRONY DO AUTOMATYZACJI
 public class SearchPage {
 
-    //    16.DODANIE DRIVERA
-    public WebDriver driver;
+//    16.DODANIE DRIVERA
+public WebDriver driver;
 
     //    17.DODANIE SELEKTORÓW
 //    SELENIUM WYKRYWA TYLKO PIERWSZY ELEMENT O TAKIM SAMYM ID
@@ -17,7 +17,8 @@ public class SearchPage {
 //    XPATH SELEKTOR //*[@id="WidgetSearchFieldContainer"]/form/div[1]/div[3]/button
 //    CSS SELEKTOR .css-19u3g69 > button:nth-child(1)
     By cookieButtonSelector = By.id("onetrust-accept-btn-handler");
-    By searchInputSelector = By.id("downshift-0-input");
+    By searchInputSelector = By.id("downshift-0-label");
+    By searchDeleteLastRecord = By.cssSelector("#downshift-0-menu > li:nth-child(2) > div > span");
     By searchInputCheckboxSelector = By.cssSelector("#downshift-0-menu > li:nth-child(1) > div > span");
     By searchButtonSelector = By.cssSelector("#WidgetSearchFieldContainer > form > div.css-hl1f5l > div.css-19u3g69 > button");
 
@@ -33,6 +34,10 @@ public class SearchPage {
 
     public WebElement getSearchInput() {
         return driver.findElement(searchInputSelector);
+    }
+
+    public WebElement getSearchDeleteLastRecord() {
+        return driver.findElement(searchDeleteLastRecord);
     }
 
     public WebElement getSearchInputCheckbox() {

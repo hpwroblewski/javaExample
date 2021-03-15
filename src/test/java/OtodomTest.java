@@ -1,6 +1,8 @@
 import framework.config.Base;
 import framework.page.ListPage;
 import framework.page.SearchPage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -8,13 +10,17 @@ import java.io.IOException;
 
 //11.DODANIE EXTENDS BASE DZIEDZICZENIA METODY INITIALIZEDRIVER ŻEBY MOŻNA BYŁO UŻYĆ METODY I ZWRÓCIĆ DRIVERA
 public class OtodomTest extends Base {
+    //    31.DODANIE WYWOŁYWANIA LOGÓW LOG4J
+    public static Logger Log = LogManager.getLogger(Base.class.getName());
 
     //    27.DODANIE TAGU @BeforeTest KTÓRY INICJALIZUJE DRIVERA ORAZ ODPALA OKNO PRZEGLĄDARKI
 //    UWAGA! @BeforeTest WYKONUJE SIĘ TYLKO RAZ DLATEGO NIE DODAJE SIĘ W TEJ SEKCJI WYWOŁANIA URL STRONY DLA TESTÓW WYKONYWANYCH WIELOKROTNIE(Z TAGIEM @DataProvider)
     @BeforeTest
     public void initialize() throws IOException {
+
 //        13.INICJALIZACJA DRIVERA PRZEGLĄDARKI I ODPALENIE PRZEGLĄDARKI
         driver = initializeDriver();
+        Log.info("INICJALIZACJA DRIVERA");
 
 //        14.MAKSYMALIZACJA OKNA PRZEGLĄDARKI
         driver.manage().window().maximize();
@@ -23,7 +29,8 @@ public class OtodomTest extends Base {
     //    12.DODANIE ADNOTACJI TEST Z TESTNG ORAZ NAZWY TESTU
 //    23.PODPIĘCIE DANYCH Z DATA PROVIDERA DO WYWOŁANIA WIELOKROTNIE TESTU
     @Test(dataProvider = "getData")
-    public void basePageNavigation(String destination) {
+    public void basePageNavigation(String destination) throws IOException {
+
 //        26.DODANIE ODCZYTU URL Z data.properties
         driver.get(prop.getProperty("urlOtodom"));
 
@@ -38,10 +45,12 @@ public class OtodomTest extends Base {
 
 //        ----------KOD TESTU----------
         searchPage.getCookieButton().click();
-        searchPage.getSearchInput().click();
         searchPage.getSearchInput().sendKeys(destination);
         searchPage.getSearchInputCheckbox().click();
         searchPage.getSearchButton().click();
+        searchPage.getSearchInput().click();
+        searchPage.getSearchDeleteLastRecord().click();
+        driver.navigate().refresh();
 //        -----------------------------
 
 //        20.PAGE OBJECT PATTERN PRZENOSI DRIVERA PRZEGLĄDARKI
@@ -54,12 +63,16 @@ public class OtodomTest extends Base {
         Assert.assertEquals(listPage.getSearchInput().getText(), destination);
 
 //        ----------KOD TESTU----------
+        listPage.getAmountOfRecord().click();
         String text = listPage.getAmountOfRecord().getText();
         System.out.println(text);
 //        -----------------------------
+
+//        WYCZYSZCZENIE WSZYSTKICH ZAPISANYCH CIASTECZEK
+        driver.manage().deleteAllCookies();
     }
 
-    //        22.DODANIE DATA PROVIDER ODPOWIEDZIALNEGO ZA ODPALANIE TESTÓW Z RÓŻNYMI PARAMETRAMI
+    //    22.DODANIE DATA PROVIDER ODPOWIEDZIALNEGO ZA ODPALANIE TESTÓW Z RÓŻNYMI PARAMETRAMI
     @DataProvider
     public Object[][] getData() {
 
@@ -76,6 +89,7 @@ public class OtodomTest extends Base {
     //    26.DODANIE TAGU @AfterTest KTÓRY ZAMYKA OKNO PRZEGLĄDARKI
     @AfterTest
     public void tearDown() {
+
 //        21.ZAMKNIĘCIE PRZEGLĄDARKI
         driver.close();
     }
